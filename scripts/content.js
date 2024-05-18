@@ -12,7 +12,6 @@ const observer = new MutationObserver(mutations => {
       spans.forEach((span) => {
         if(span.textContent === matchs[lang]) {
           const parent = span.closest('article')
-          console.log("Bloqueada 1 ad")
           parent?.removeChild(parent.childNodes[0])
         }
       })
