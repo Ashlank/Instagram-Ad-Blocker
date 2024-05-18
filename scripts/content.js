@@ -7,11 +7,12 @@ const lang = document.children[0].attributes.lang.value.slice(0,2)
 
 const observer = new MutationObserver(mutations => {
   mutations.forEach((mutation) => {
-    const spans = mutation.target.querySelectorAll('a span div span')
+    const spans = mutation.target.querySelectorAll('span div span')
     if(spans.length) {
       spans.forEach((span) => {
         if(span.textContent === matchs[lang]) {
           const parent = span.closest('article')
+          console.log("Bloqueada 1 ad")
           parent?.removeChild(parent.childNodes[0])
         }
       })
